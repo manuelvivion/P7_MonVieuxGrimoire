@@ -1,6 +1,11 @@
-au 29/01 : 
+ 
 (cf google doc de la session du 26/1)
 
+au 2/2 :
+- optimiser le stockage avec sharp
+- Ajouter le plugin .ENV (avec le fichier .env)
+
+au 29/01 :
 - optimiser le stockage avec sharp
 - Ajouter le plugin .ENV (avec le fichier .env)
 - tester les limites du changement de note du livre an ajoutant un body "pourri" dans postman
