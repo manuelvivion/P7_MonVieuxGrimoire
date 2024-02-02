@@ -1,0 +1,10 @@
+au 29/01 : 
+(cf google doc de la session du 26/1)
+
+- optimiser le stockage avec sharp
+- Ajouter le plugin .ENV (avec le fichier .env)
+- tester les limites du changement de note du livre an ajoutant un body "pourri" dans postman
+- changer la gestion d'erreur du changement de note (valeur note et id user) ; changer throw error par un res.status dans une condition
+- modifier la gestion d'erreur du FS.unlink (controller/book.js/ligne 70)
+- tester la presence du userId dans la db lors du changement de note
+- creation d'un livre : forcer un tableau vide et une note à 0, via le controller
