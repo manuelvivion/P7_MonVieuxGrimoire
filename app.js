@@ -2,6 +2,10 @@
 const express = require('express');
 const app = express();
 
+const dotenv =require ('dotenv'); // <--- (1)
+// Initialize configuration
+dotenv.config(); // <--- (2)
+
 const mongoose = require('mongoose');
 const bookRoutes = require('./routes/book');
 const userRoutes = require('./routes/user');
@@ -10,7 +14,7 @@ const path = require('path');
 app.use(express.json()); // make to app able to read directly req objects as JSON
 
 //connect to external mongooseDB
-mongoose.connect('mongodb+srv://manuelvivion:vC8y1F53XebC6v1g@monvieuxgrimoire.jxr3ioa.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(`mongodb+srv://${process.env['MONGO_LOGIN']}:${process.env['MONGO_PWD']}@monvieuxgrimoire.jxr3ioa.mongodb.net/?retryWrites=true&w=majority`,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
