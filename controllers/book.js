@@ -102,9 +102,9 @@ exports.modifyBookRating = (req, res, next) => {
 
   //tester la présence du user dans la DB
     User.findOne({_id:req.auth.userId})
-      .then((user)=>{
+      .then(/* (user)=>{
         if(!user){errorMsg+="Utilisateur non présent dans la base de données"}
-      })
+      } */)
       .catch((error)=>{errorMsg+="Utilisateur non présent dans la base de données"})
   // fin test presence user dans la DB
 
