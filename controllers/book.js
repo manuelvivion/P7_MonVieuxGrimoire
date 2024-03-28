@@ -23,7 +23,7 @@ exports.createBook = (req, res, next) => {
   .then(() => { res.status(201).json({message: 'Objet enregistré !'})})
   .catch(error => { 
     res.status(400).json( { error });
-    console.log('erreur ajout', book);
+    console.log('erreur ajout',error.message, book);
   }) 
 }; // End of Create Book controller
 
