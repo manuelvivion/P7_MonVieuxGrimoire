@@ -2,7 +2,7 @@ const http = require('http');
 const app = require('./app');
 
 const dotenv =require ('dotenv'); // <--- (1)
-// Initialize configuration
+// Initialize configuration : copy .env variables in process.env
 dotenv.config(); // <--- (2)
 let port = process.env['APP_PORT'] || 4000; // Port number // <--- (3)
 const env = process.env['APP_ENV'] || 'dev'; // Environment // <--- (4)

@@ -2,6 +2,10 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt'); // to hash the password
 const jwt = require('jsonwebtoken'); // to manage token creation and encryption
 
+const dotenv =require ('dotenv'); // <--- (1)
+// Initialize configuration : copy .env variables in process.env
+dotenv.config(); // <--- (2)
+
 
 // --------- Sign Up controller -------
 exports.signup = (req, res, next) => {
@@ -35,10 +39,11 @@ exports.signup = (req, res, next) => {
                         userId: user._id,
                         token: jwt.sign( // token creation including User_id (from db)
                             { userId: user._id }, //value to crypt
-                            'RANDOM_TOKEN_SECRET', //crypting key
+                            process.env['TOKENKEY'], //crypting key
                             { expiresIn: '24h' } //token duration
                         )
                     });
+                    
                 })
                 .catch(error => res.status(500).json({ error })); // Server Rrror
         })
