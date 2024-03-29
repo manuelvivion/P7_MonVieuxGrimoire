@@ -1,9 +1,15 @@
 
 const sharp = require("sharp");
-// const fs = require("fs");
+const fs = require("fs");
 
 module.exports = async (req, res, next) => {
     // console.log(req.file);
+    fs.access("./images", (error) => {
+        if (error) {
+          fs.mkdirSync("./images");
+        }
+      });
+
     if(req.file){ // if file is sent (in case of update route)
 
         try {

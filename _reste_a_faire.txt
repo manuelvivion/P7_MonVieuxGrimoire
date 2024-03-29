@@ -2,6 +2,7 @@
 (cf google doc de la session du 26/1)
 au 28/3 : 
 - sharp ajouté 
+- dotenv ajouté
 
 au 2/2 :
 - optimiser le stockage avec sharp
