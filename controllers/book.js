@@ -95,7 +95,7 @@ exports.modifyBook = (req, res, next) => {
 
 // --------- Modify Book Rating controller -------
 exports.modifyBookRating = (req, res, next) => { 
-  console.log('modif rating en cours');
+  //console.log('modif rating en cours');
   let errorMsg=""; //message created to catch all errors / no errors => errorMsg stay empty string
 
   delete req.body._userId; //Security : we delete the userId sent in request (possibly hacked) to get the correct user id encrypted in token
@@ -215,7 +215,7 @@ exports.getAllBook = (req, res, next) => {
 
 // --------- get 3 best Books controller -------
 exports.getBestRating = (req, res, next) => {
-  console.log('best of commencé');
+  //console.log('best of commencé');
   Book.find().sort({averageRating: 'desc' }) //-> return  all books, sorted by descending average Rating
   .then( 
     (books) => {
